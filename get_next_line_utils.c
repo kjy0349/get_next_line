@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:58:44 by jeykim            #+#    #+#             */
-/*   Updated: 2022/05/24 19:25:27 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/05/24 19:49:21 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	str[i] = '\0';
 	return (str);
-}
-
-t_blist	*get_buffer(t_blist **buff_list, int fd)
-{
-	while (*buff_list)
-	{
-		if ((*buff_list)->fd == fd)
-			break ;
-		*buff_list = (*buff_list)->next;
-	}
-	return (*buff_list);
 }
 
 void	add_buff_last(t_blist **buff_list, char *buffer, int fd)
