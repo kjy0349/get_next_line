@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:50:53 by jeykim            #+#    #+#             */
-/*   Updated: 2022/06/02 14:37:42 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/06/16 14:24:20 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ typedef struct buffer_list
 # endif
 
 char	*get_next_line(int fd);
-void	find_and_join(t_blist **buff_list, char *buffer, int fd);
+size_t	ft_strlen(const char *s);
+void	join_and_setbuffer(t_blist **buff_list, char *buffer, int fd);
 void	add_buff_last(t_blist **buff_list, char *buffer, int fd);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

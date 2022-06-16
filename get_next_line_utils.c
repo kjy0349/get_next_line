@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:58:44 by jeykim            #+#    #+#             */
-/*   Updated: 2022/05/24 19:49:21 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/06/16 15:11:37 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,39 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	const void	*s;
-	void		*d;
 	size_t		i;
 
-	s = src;
-	d = dst;
 	i = 0;
 	if (!dst && !src)
 		return (NULL);
-	if (d > s)
+	if (dst > src)
 	{
+		((unsigned char *)dst)[len] = '\0';
 		while (len-- > 0)
-			((unsigned char *)d)[len] = ((unsigned char *)s)[len];
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
 	}
 	else
 	{
 		while (i < len)
 		{
-			((unsigned char *)d)[i] = ((unsigned char *)s)[i];
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
 	}
 	return (dst);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (*s != '\0')
+	{
+		i++;
+		s++;
+	}
+	return (i);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -73,8 +83,6 @@ void	add_buff_last(t_blist **buff_list, char *buffer, int fd)
 	t_blist	*new_buff;
 
 	new_buff = (t_blist *)malloc(sizeof(t_blist));
-	if (!new_buff)
-		return (NULL);
 	new_buff->fd = fd;
 	new_buff->buffer = buffer;
 	new_buff->next = NULL;
