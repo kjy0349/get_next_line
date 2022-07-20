@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:50:22 by jeykim            #+#    #+#             */
-/*   Updated: 2022/06/16 18:14:48 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/07/20 18:51:21 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,13 @@ char	*get_next_line(int fd)
 	return_num = read(fd, buffer, BUFFER_SIZE);
 	if (fd < 0 || BUFFER_SIZE <= 0 || return_num == -1 || !buffer)
 		return (NULL);
+	if (!buff_list)
+	{
+		buff_list = (char **)malloc(sizeof(char *));
+		(*buff_list)->next = NULL;
+		(*buff_list)->fd = 0;
+		(*buff_list)->buffer = (char *)malloc(sizeof(char) * BUFFER_SIZE);
+	}
 	ret_line = getline_and_setbuffer(find_and_join(buff_list, buffer, fd));
 	return (ret_line);
 }
