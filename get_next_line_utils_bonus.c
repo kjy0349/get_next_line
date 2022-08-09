@@ -6,11 +6,11 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:58:44 by jeykim            #+#    #+#             */
-/*   Updated: 2022/08/09 15:35:23 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/08/09 16:20:06 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	gnl_strlen(const char *str)
 {
