@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:50:22 by jeykim            #+#    #+#             */
-/*   Updated: 2022/08/09 16:19:59 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/08/09 17:01:54 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char	*get_line(char **ret_line, char **buff_arr)
 char	*get_next_line(int fd)
 {
 	char		*ret_line;
-	static char	*buff_arr[OPEN_MAX];
+	static char	*buff_arr[OPEN_MAX + 1];
 	char		*buffer;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
