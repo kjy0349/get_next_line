@@ -63,7 +63,7 @@ char	*get_next_line(int fd)
 	static char	*buff_arr[OPEN_MAX + 1];
 	char		*buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > OPEN_MAX)
 		return (NULL);
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
