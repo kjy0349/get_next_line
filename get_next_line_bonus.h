@@ -6,7 +6,7 @@
 /*   By: jeykim <jeykim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:50:53 by jeykim            #+#    #+#             */
-/*   Updated: 2022/08/09 16:19:47 by jeykim           ###   ########.fr       */
+/*   Updated: 2022/08/09 16:23:37 by jeykim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-
-typedef struct buffer_list
-{
-	int					fd;
-	char				*buffer;
-	int					buff_size;
-	struct buffer_list	*next;
-}	t_blist;
 
 # ifndef BUFFER_SIZE
 
